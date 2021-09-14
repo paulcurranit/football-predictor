@@ -5,7 +5,7 @@ import json
 import requests
 import os
 
-teamDictionary = {
+team_dictionary = {
     "Arsenal FC": "Arsenal",
     "Aston Villa FC": "Aston Villa",
     "Brentford FC": "Brentford",
@@ -129,7 +129,7 @@ def downloadfixures(league, date_from, date_to):
     matches = response["matches"]
     formatted_matches = []
     for match in matches:
-        formatted_matches.append([teamDictionary[match["homeTeam"]["name"]], teamDictionary[match["awayTeam"]["name"]]])
+        formatted_matches.append([team_dictionary[match["homeTeam"]["name"]], team_dictionary[match["awayTeam"]["name"]]])
 
     return formatted_matches
 
@@ -208,8 +208,8 @@ if __name__ == '__main__':
     bl_ratings = get_coefficient(BL_STATS)
     fl_ratings = get_coefficient(FL_STATS)
 
-    dateFrom = "2021-09-10"
-    dateTo = "2021-09-14"
+    dateFrom = "2021-09-17"
+    dateTo = "2021-09-21"
 
     # print(sa_ratings)
 
